@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Function to send data to OpenAI API and get a financial plan
 async function generateFinancialPlan(data) {
   const openaiAPI = 'https://api.openai.com/v1/chat/completions';
-  const openaiAPIKey = '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';
+  const openaiAPIKey = '{{ secrets.OPENAI_API_KEY }}';
   const prompt = "You will be a financial advisor.  Your goal is to provide financial recommendations based off of the information provided.  You must not make any reference to being an AI.  Your one job is to provide a financial plan to the person.  If any of the values in the json data are empty, make a note to the person that you can provide better recommendation if all of the values are completed above. Make sure to put a disclaimer at the very end that this information should be reviewed with a real tax professional before taking any actions. Check the salary against the job title and confirm if it is a fair wage or not, use labor statistics from within the past 5 years to make this determination. Output the recommendations in a paragraph format, not like a letter, just explain each recommendation without using 'I' language." + JSON.stringify(data)
 
   console.log(prompt);
